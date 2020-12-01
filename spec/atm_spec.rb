@@ -6,6 +6,19 @@ describe ATM do
     expect(ATM.new.check_balance).to eq 0
   end
 
+  describe "#transaction_history" do
+    it "returns the transaction history in reverse order" do
+      atm = ATM.new
+      atm.deposit(1000)
+      atm.withdraw(10)
+      atm.deposit(5)
+
+      expect(atm.transaction_history[0][:credit]).to eq 5
+      expect(atm.transaction_history[1][:debit]).to eq 10
+      expect(atm.transaction_history[2][:credit]).to eq 1000
+    end
+  end
+
   describe "#deposit" do
     it "adds money to the balance" do
       atm = ATM.new
@@ -47,7 +60,7 @@ describe ATM do
       atm = ATM.new
       atm.deposit(1000, '14/01/2012')
       atm.withdraw(500, '14/01/2012')
-      transaction = atm.transaction_history[1]
+      transaction = atm.transaction_history[0]
       expect(transaction[:debit]).to eq 500
     end
 
@@ -55,7 +68,7 @@ describe ATM do
       atm = ATM.new
       atm.deposit(1000, '14/01/2012')
       atm.withdraw(500, '14/01/2012')
-      transaction = atm.transaction_history[1]
+      transaction = atm.transaction_history[0]
       expect(transaction[:date]).to eq '14/01/2012'
     end
 
@@ -63,7 +76,7 @@ describe ATM do
       atm = ATM.new
       atm.deposit(1000, '14/01/2012')
       atm.withdraw(500, '14/01/2012')
-      transaction = atm.transaction_history[1]
+      transaction = atm.transaction_history[0]
       expect(transaction[:balance]).to eq 500
     end
   end

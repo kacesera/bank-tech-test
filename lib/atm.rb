@@ -20,7 +20,7 @@ class ATM
   end
 
   def transaction_history
-    @transactions
+    @transactions.reverse
   end
 
   private
