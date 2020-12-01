@@ -48,4 +48,24 @@ As a client,
 So that I can keep track of my finances,
 I would like to see my transaction history.
 ```
+## Process
 
+My approach was relatively straightforward: Satisfy the user stories, and then extract into the following additional classes:
+
+1. ATMPrinter
+2. Transaction
+
+While under other circumstances (such as with a much larger project), I would outline my potential classes and how they interact before writing tests, because this project is comparatively small-- I decided that taking a complete test-driven approach to its design would be the most beneficial. 
+
+After extracting the ATMPrinter class from the ATM class, I noticed that I needed to classify each transaction to print it appropriately. Because of this, I decided to extract the Transaction class from the ATM class as well. In doing this, I was able to greatly simplify my code and improve the readability of my tests across all classes.
+
+## How to use
+
+1. Load up `IRB` or a REPL of your choice
+2. Require the ATM.rb file: `./lib/atm.rb`
+3. Instantiate a new ATM class: `atm = ATM.new`
+
+- To make a deposit: `atm.deposit(500)`
+- To make a withdrawal: `atm.withdraw(500)`
+- To see your current balance: `atm.current_balance`
+- To print your transaction history: `atm.print_transaction_history`
