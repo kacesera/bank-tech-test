@@ -4,12 +4,16 @@ class ATM
     @balance = 0
   end
 
+  def check_balance
+    @balance
+  end
+
   def deposit(cash)
     @balance += cash
   end
 
-  def check_balance
-    @balance
+  def withdraw(cash)
+    @balance -= cash
   end
 
 end
