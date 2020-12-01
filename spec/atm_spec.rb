@@ -26,6 +26,13 @@ describe ATM do
       transaction = atm.transaction_history[0]
       expect(transaction[:date]).to eq '14/01/2012'
     end
+
+    it "adds final balance to transaction history" do
+      atm = ATM.new
+      atm.deposit(1000, '14/01/2012')
+      transaction = atm.transaction_history[0]
+      expect(transaction[:balance]).to eq 1000
+    end
   end
 
   describe "#withdraw" do

@@ -13,7 +13,8 @@ class ATM
     @balance += cash
     @transactions << { 
       amount: cash,
-      date: date
+      date: date,
+      balance: @balance
     }
   end
 
