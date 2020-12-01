@@ -1,3 +1,5 @@
+require 'date'
+
 class Transaction
 
   def initialize(type, amount, balance, date = format_date)
