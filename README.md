@@ -23,4 +23,29 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+## Planning
+
+### User Stories
+
+```
+As a client,
+So that I can have money in my bank account,
+I would like to make a deposit.
+
+As a client,
+So that I can use my money,
+I would like to make a withdrawal.
+
+As a client,
+So that I can protect myself from fraud,
+I would like to see the dates to be included with each transaction.
+
+As a client,
+So that I don't overdraft,
+I would like to know my balance.
+
+As a client,
+So that I can keep track of my finances,
+I would like to see my transaction history.
+```
 
