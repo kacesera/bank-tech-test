@@ -1,22 +1,10 @@
 require 'atm_printer'
 
 describe ATMPrinter do
-  let(:transaction_history) {
-    [{
-      debit: 500,
-      date: '14/01/2012',
-      balance: 2500
-    },
-    {
-      credit: 2000,
-      date: '13/01/2012',
-      balance: 3000
-    },
-    {
-      credit: 1000,
-      date: '10/01/2012',
-      balance: 1000
-    }]}  
+  let(:first_transaction) { double :transaction_1, date: '10/01/2012', balance: 1000, amount: 1000, is_a_deposit?: true, is_a_withdrawal?: false }
+  let(:second_transaction) { double :transaction_2, date: '13/01/2012', balance: 3000, amount: 2000, is_a_deposit?: true, is_a_withdrawal?: false }
+  let(:third_transaction) { double :transaction_3, date: '14/01/2012', balance: 2500, amount: 500, is_a_deposit?: false, is_a_withdrawal?: true }
+  let(:transaction_history) { [third_transaction, second_transaction, first_transaction] }
   
     describe '#print' do
     it "outputs the transaction history" do
