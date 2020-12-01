@@ -14,8 +14,9 @@ class ATM
     add_transaction('debit', cash_amount, date)
   end
 
-  def withdraw(cash_amount)
+  def withdraw(cash_amount, date = format_date)
     @balance -= cash_amount
+    add_transaction('credit', cash_amount, date)
   end
 
   def transaction_history
