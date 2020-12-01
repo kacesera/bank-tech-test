@@ -9,9 +9,12 @@ class ATM
     @balance
   end
 
-  def deposit(cash)
+  def deposit(cash, date = format_date)
     @balance += cash
-    @transactions << { amount: cash }
+    @transactions << { 
+      amount: cash,
+      date: date
+    }
   end
 
   def withdraw(cash)
@@ -20,6 +23,12 @@ class ATM
 
   def transaction_history
     @transactions
+  end
+
+  private
+
+  def format_date
+    Date.today.strftime('%d/%m/%Y')
   end
 
 end
