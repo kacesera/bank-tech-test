@@ -3,7 +3,7 @@ require 'atm'
 describe ATM do 
 
   it "starts with a balance of 0" do
-    expect(ATM.new.check_balance).to eq 0
+    expect(ATM.new.check_balance).to eq 0.00
   end
 
   describe "#transaction_history" do
@@ -78,6 +78,20 @@ describe ATM do
       atm.withdraw(500, '14/01/2012')
       transaction = atm.transaction_history[0]
       expect(transaction[:balance]).to eq 500
+    end
+  end
+
+  describe '#print_transaction_history' do
+
+    it "outputs the transaction history" do
+      atm = ATM.new
+      atm.deposit(1000, '10/01/2012')
+      atm.deposit(2000, '13/01/2012')
+      atm.withdraw(500, '14/01/2012')
+
+      expect{ atm.print_transaction_history }.to output(
+        "date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00\n"
+      ).to_stdout
     end
   end
 end
