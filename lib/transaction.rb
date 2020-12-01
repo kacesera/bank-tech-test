@@ -11,6 +11,10 @@ class Transaction
     @balance
   end
 
+  def amount
+    @amount
+  end
+
   def date
     @date
   end

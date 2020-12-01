@@ -11,6 +11,12 @@ describe Transaction do
     end
   end
 
+  describe '#amount' do
+    it 'returns the amount deposited or withdrawn' do
+      expect(@transaction.amount).to eq 1000
+    end
+  end
+
   describe '#date' do
   it 'returns the date' do
     today = Date.today.strftime('%d/%m/%Y')
