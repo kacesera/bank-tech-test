@@ -61,9 +61,13 @@ After extracting the ATMPrinter class from the ATM class, I noticed that I neede
 
 ## How to use
 
+### Set up
+
 1. Load up `IRB` or a REPL of your choice
 2. Require the ATM.rb file: `./lib/atm.rb`
 3. Instantiate a new ATM class: `atm = ATM.new`
+
+### Commands
 
 - To make a deposit: `atm.deposit(500)`
 - To make a withdrawal: `atm.withdraw(500)`
