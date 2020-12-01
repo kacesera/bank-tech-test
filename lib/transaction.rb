@@ -9,23 +9,13 @@ class Transaction
     @balance = balance
   end
 
-  def balance
-    @balance
-  end
+  attr_reader :balance, :amount, :date
 
-  def amount
-    @amount
-  end
-
-  def date
-    @date
-  end
-
-  def is_a_deposit?
+  def deposit?
     @type == 'credit'
   end
 
-  def is_a_withdrawal?
+  def withdrawal?
     @type == 'debit'
   end
 

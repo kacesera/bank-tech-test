@@ -34,7 +34,7 @@ class ATM
 
   private
 
-  def add_transaction(type, cash_amount)
+  def add_transaction(_type, cash_amount)
     @transactions << @transaction_class.new('credit', cash_amount, @balance)
   end
 end

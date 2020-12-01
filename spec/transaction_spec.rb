@@ -18,38 +18,38 @@ describe Transaction do
   end
 
   describe '#date' do
-  it 'returns the date' do
-    today = Date.today.strftime('%d/%m/%Y')
-    expect(@transaction.date).to eq today
+    it 'returns the date' do
+      today = Date.today.strftime('%d/%m/%Y')
+      expect(@transaction.date).to eq today
+    end
   end
-end
 
-  describe 'is_a_deposit?' do
+  describe 'deposit?' do
     context 'transaction is a deposit' do
       it 'returns true' do
-        expect(@transaction.is_a_deposit?).to be
+        expect(@transaction.deposit?).to be
       end
     end
 
     context 'transaction is a withdrawal' do
-      let(:withdrawal) { Transaction.new('debit', 1000, '10/12/2012', 1000)}
+      let(:withdrawal) { Transaction.new('debit', 1000, '10/12/2012', 1000) }
       it 'returns false' do
-        expect(withdrawal.is_a_deposit?).to be false
+        expect(withdrawal.deposit?).to be false
       end
     end
   end
 
-  describe 'is_a_withdrawal?' do
+  describe 'withdrawal?' do
     context 'transaction is a deposit' do
       it 'returns false' do
-        expect(@transaction.is_a_withdrawal?).to be false
+        expect(@transaction.withdrawal?).to be false
       end
     end
 
     context 'transaction is a withdrawal' do
-      let(:withdrawal) { Transaction.new('debit', 1000, '10/12/2012', 1000)}
+      let(:withdrawal) { Transaction.new('debit', 1000, '10/12/2012', 1000) }
       it 'returns false' do
-        expect(withdrawal.is_a_withdrawal?).to be
+        expect(withdrawal.withdrawal?).to be
       end
     end
   end
