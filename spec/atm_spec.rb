@@ -12,6 +12,13 @@ describe ATM do
       atm.deposit(1000)
       expect(atm.check_balance).to eq 1000
     end
+
+    it "adds the deposited amount to transaction history" do
+      atm = ATM.new
+      atm.deposit(1000)
+      transaction = atm.transaction_history[0]
+      expect(transaction[:amount]).to eq 1000
+    end
   end
 
   describe "#withdraw" do
