@@ -1,4 +1,5 @@
 require_relative 'atm_printer'
+require_relative 'transaction'
 
 class ATM
 
