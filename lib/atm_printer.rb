@@ -2,13 +2,17 @@ class ATMPrinter
 
   def self.print(transaction_history)
     self.print_header
+    self.print_transactions(transaction_history)
+  end
+
+  private
+
+  def self.print_transactions(transaction_history)
     transaction_history.each do |transaction|
       self.print_credit(transaction) if transaction.has_key?(:credit)
       self.print_debit(transaction) if transaction.has_key?(:debit)
     end
   end
-
-  private
 
   def self.print_header
     puts "date || credit || debit || balance"
