@@ -1,3 +1,4 @@
+require 'rubocop'
 require 'simplecov'
 require 'simplecov-console'
 
