@@ -1,3 +1,5 @@
+require_relative 'atm_printer'
+
 class ATM
 
   def initialize

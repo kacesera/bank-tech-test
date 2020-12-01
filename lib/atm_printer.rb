@@ -1,0 +1,3 @@
+class ATMPrinter 
+
+end
