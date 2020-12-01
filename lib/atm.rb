@@ -12,7 +12,7 @@ class ATM
   def deposit(cash, date = format_date)
     @balance += cash
     @transactions << { 
-      amount: cash,
+      debit: cash,
       date: date,
       balance: @balance
     }
