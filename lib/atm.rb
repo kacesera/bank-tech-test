@@ -2,7 +2,8 @@ require_relative 'atm_printer'
 
 class ATM
 
-  def initialize
+  def initialize(atm_printer = ATMPrinter)
+    @atm_printer = atm_printer
     @balance = 0
     @transactions = []
   end
@@ -26,14 +27,7 @@ class ATM
   end
 
   def print_transaction_history
-    puts "date || credit || debit || balance"
-    transaction_history.each do |transaction|
-      if transaction.has_key?(:credit)
-        puts "#{transaction[:date]} || #{format_to_currency(transaction[:credit])} || || #{format_to_currency(transaction[:balance])}"
-      else
-        puts "#{transaction[:date]} || || #{format_to_currency(transaction[:debit])} || #{format_to_currency(transaction[:balance])}"
-      end
-    end
+    @atm_printer.print(transaction_history)
   end
 
   private
@@ -44,10 +38,6 @@ class ATM
       date: date,
       balance: @balance
     }
-  end
-
-  def format_to_currency(num)
-    '%.2f' %  num
   end
 
   def format_date
