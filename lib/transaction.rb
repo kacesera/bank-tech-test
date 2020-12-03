@@ -9,8 +9,6 @@ class Transaction
     @balance = balance
   end
 
-  attr_reader :balance, :amount, :date
-
   def deposit?
     @type == 'credit'
   end
