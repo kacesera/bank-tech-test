@@ -9,6 +9,18 @@ class Transaction
     @balance = balance
   end
 
+  def balance
+    @balance
+  end
+
+  def amount
+    @amount
+  end
+
+  def date
+    @date
+  end
+
   def deposit?
     @type == 'credit'
   end
