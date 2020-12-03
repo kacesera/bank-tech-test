@@ -83,6 +83,6 @@ Set up the application as stated above, and input the following into your termin
 atm.deposit(1000)
 atm.withdraw(5)
 atm.deposit(10)
-atm.print_current_transaction_history
+atm.print_transaction_history
 ```
 You will see a table similar to the one stated in the acceptance criteria.
