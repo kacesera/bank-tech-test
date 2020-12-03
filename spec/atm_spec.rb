@@ -4,10 +4,6 @@ describe ATM do
   let(:transaction) { double :transaction }
   let(:transaction_class) { double :transaction_class, new: transaction }
 
-  it "starts with a balance of 0" do
-    expect(ATM.new.check_balance).to eq 0.00
-  end
-
   describe "#deposit" do
     before(:each) do
       allow(transaction).to receive(:amount) { 1000 }
