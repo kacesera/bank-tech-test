@@ -64,12 +64,25 @@ After extracting the ATMPrinter class from the ATM class, I noticed that I neede
 ### Set up
 
 1. Load up `IRB` or a REPL of your choice
-2. Require the ATM.rb file: `./lib/atm.rb`
-3. Instantiate a new ATM class: `atm = ATM.new`
+2. Require the ATM.rb file:
+   If using PRY: `load './lib/atm.rb'`
+   If using IRB: `require './lib/atm.rb'`
+3. Instantiate a new ATM class in your REPL using the following line of code: `atm = ATM.new`
+4. Make a deposit using the deposit command listed in the 'Commands' section below!
 
 ### Commands
 
 - To make a deposit: `atm.deposit(500)`
 - To make a withdrawal: `atm.withdraw(500)`
-- To see your current balance: `atm.current_balance`
+- To see your current balance: `atm.check_balance`
 - To print your transaction history: `atm.print_transaction_history`
+
+### Feature Test
+Set up the application as stated above, and input the following into your terminal:
+```
+atm.deposit(1000)
+atm.withdraw(5)
+atm.deposit(10)
+atm.print_current_transaction_history
+```
+You will see a table similar to the one stated in the acceptance criteria.
